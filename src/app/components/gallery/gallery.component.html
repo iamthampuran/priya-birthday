@@ -10,6 +10,11 @@
       class="polaroid"
       *ngFor="let p of photos"
       [style.transform]="'rotate(' + p.rotate + 'deg) translateY(' + p.lift + 'px)'"
+      (click)="openPhoto(p)"
+      role="button"
+      tabindex="0"
+      (keydown.enter)="openPhoto(p)"
+      (keydown.space)="openPhoto(p)"
     >
       <span class="polaroid__tape"></span>
       <img
@@ -21,5 +26,31 @@
       />
       <figcaption class="polaroid__caption">{{ p.caption }}</figcaption>
     </figure>
+  </div>
+
+  <div
+    class="gallery-lightbox"
+    *ngIf="selectedPhoto"
+    (click)="closePhoto()"
+    aria-modal="true"
+    role="dialog"
+  >
+    <div class="gallery-lightbox__content" (click)="$event.stopPropagation()">
+      <button
+        type="button"
+        class="gallery-lightbox__close"
+        aria-label="Close photo"
+        (click)="closePhoto()"
+      >
+        ×
+      </button>
+      <img
+        class="gallery-lightbox__img"
+        [src]="selectedPhoto.src"
+        [alt]="selectedPhoto.caption"
+        (error)="onImgError($event)"
+      />
+      <p class="gallery-lightbox__caption">{{ selectedPhoto.caption }}</p>
+    </div>
   </div>
 </section>

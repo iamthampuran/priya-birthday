@@ -25,6 +25,16 @@ export class GalleryComponent {
     { src: 'assets/media/1000080397.JPEG', caption: 'a favorite, honestly', rotate: 2, lift: 14 }
   ];
 
+  selectedPhoto: Photo | null = null;
+
+  openPhoto(photo: Photo): void {
+    this.selectedPhoto = photo;
+  }
+
+  closePhoto(): void {
+    this.selectedPhoto = null;
+  }
+
   onImgError(event: Event): void {
     const el = event.target as HTMLImageElement;
     el.classList.add('polaroid__img--missing');
