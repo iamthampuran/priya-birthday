@@ -1,0 +1,10 @@
+
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "priya-birthday",
+  "compatibility_date": "2026-10-12",
+  "assets": {
+    "directory": "./dist/happy-birthday-cookie",
+    "not_found_handling": "single-page-application"
+  }
+}
