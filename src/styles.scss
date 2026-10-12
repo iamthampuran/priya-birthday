@@ -1,0 +1,82 @@
+:root {
+  --bg: #FDF6F3;
+  --bg-alt: #F6E8E4;
+  --paper: #FBF1E7;
+  --rose: #C97B84;
+  --rose-deep: #A85C68;
+  --rose-pale: #EFD3D3;
+  --gold: #CBA35C;
+  --sage: #8FA68E;
+  --ink: #4A3B3E;
+  --ink-soft: #7A6367;
+  --white: #FFFDFB;
+
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Quicksand', 'Segoe UI', sans-serif;
+
+  --measure: 62ch;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0;
+  color: var(--ink);
+}
+
+p { margin: 0; }
+
+::selection {
+  background: var(--rose-pale);
+  color: var(--rose-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--rose-deep);
+  outline-offset: 3px;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.section {
+  padding: clamp(4rem, 9vw, 7.5rem) clamp(1.25rem, 6vw, 3rem);
+}
+
+.section-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.eyebrow-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--rose-deep);
+  letter-spacing: 0.01em;
+}

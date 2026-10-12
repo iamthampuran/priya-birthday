@@ -1,0 +1,25 @@
+<section class="gallery-section">
+  <p class="eyebrow-label">a very unofficial photo album</p>
+  <h2 class="gallery-section__title">Us, in pictures</h2>
+  <p class="gallery-section__note">
+    swap these for our actual photos — drop them into <code>src/assets/media/</code> using the same file names.
+  </p>
+
+  <div class="polaroid-wall">
+    <figure
+      class="polaroid"
+      *ngFor="let p of photos"
+      [style.transform]="'rotate(' + p.rotate + 'deg) translateY(' + p.lift + 'px)'"
+    >
+      <span class="polaroid__tape"></span>
+      <img
+        class="polaroid__img"
+        [src]="p.src"
+        [alt]="p.caption"
+        loading="lazy"
+        (error)="onImgError($event)"
+      />
+      <figcaption class="polaroid__caption">{{ p.caption }}</figcaption>
+    </figure>
+  </div>
+</section>

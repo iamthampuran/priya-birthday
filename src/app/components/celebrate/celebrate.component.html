@@ -1,0 +1,16 @@
+<section class="celebrate-section">
+  <div class="celebrate-section__burst" #burstLayer aria-hidden="true"></div>
+
+  <p class="eyebrow-label">one more thing</p>
+  <h2 class="celebrate-section__title">Go ahead, it's your day</h2>
+  <p class="celebrate-section__note">you've earned a completely unnecessary amount of celebration</p>
+
+  <button class="celebrate-btn" (click)="celebrate()">
+    <span class="celebrate-btn__glyph">✦</span>
+    tap for confetti
+  </button>
+
+  <p class="celebrate-section__after" *ngIf="hasCelebrated()">
+    happy birthday, cookie. truly.
+  </p>
+</section>

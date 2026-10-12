@@ -1,0 +1,28 @@
+<section class="video-section">
+  <p class="eyebrow-label">press play</p>
+  <h2 class="video-section__title">A little something to watch</h2>
+  <p class="video-section__note">
+
+  </p>
+
+  <div class="video-frame">
+    <video
+      *ngIf="hasVideo()"
+      class="video-frame__el"
+      controls
+      preload="metadata"
+      (error)="onVideoError()"
+    >
+      <source src="assets/media/Cookie.mp4" type="video/mp4" />
+      Your browser doesn't support embedded video.
+    </video>
+
+    <div class="video-frame__empty" *ngIf="!hasVideo()">
+      <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+        <rect x="4" y="9" width="24" height="22" rx="3" fill="none" stroke="var(--rose)" stroke-width="2"/>
+        <path d="M28 15 L36 11 L36 29 L28 25 Z" fill="none" stroke="var(--rose)" stroke-width="2" stroke-linejoin="round"/>
+      </svg>
+      <p>waiting for <code>video1.mp4</code> to land in the media folder</p>
+    </div>
+  </div>
+</section>

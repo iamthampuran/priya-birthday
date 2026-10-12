@@ -1,0 +1,53 @@
+<section class="letter-section">
+  <div class="letter-card">
+    <p class="letter-card__date">for your birthday</p>
+
+    <div class="letter-card__body">
+      <p>Dear Priya,</p>
+
+      <p>
+        I wanted to write you something instead of just saying it out loud, because some things
+        are easier to mean when you put them on paper first. So... Happy Birthday COOKIE. I hope
+        today feels exactly as good as you deserve, which is to say: very.
+      </p>
+
+      <p>
+        I don't think I tell you often enough that I like you for exactly who you are, not for some 
+        easier, edited version of you. The version that overthinks texts and still sends them anyway. 
+        The version that's fiercely loyal, a little too stubborn, and so much sweeter than she probably realizes. 
+        The way you care about people, the little things you notice, and the softness you carry even when you try 
+        to hide it — it's all part of what makes you so special. You somehow manage to make chaos feel like a good 
+        time and the smallest moments feel a little warmer just by being there. I hope you never feel like you have 
+        to be any less of yourself around me, because all those little pieces of you, even the ones you might overthink
+         or wish were different, are the very things I'm glad I get to know. 
+      </p>
+
+      <p>
+        Friendship like ours doesn't happen by accident, and it definitely doesn't stay this easy
+        without someone putting in the work, so thank you for putting in the work. For staying.
+        For being exactly the kind of person worth building a whole silly little website for.
+      </p>
+
+      <p>
+        Here's to another year of you being unapologetically yourself. I'll be here for all of it,
+        cookie.
+      </p>
+
+      <p class="letter-card__signoff">With more love than this letter has room for,<br />— Akki</p>
+    </div>
+  </div>
+
+  <div class="reasons">
+    <p class="reasons__title">a few things I love about you, in no particular order</p>
+    <div class="reasons__cloud">
+      <span
+        class="reasons__chip"
+        *ngFor="let r of reasons"
+        [class.reasons__chip--rose]="r.tone === 'rose'"
+        [class.reasons__chip--sage]="r.tone === 'sage'"
+        [class.reasons__chip--gold]="r.tone === 'gold'"
+        [style.transform]="'rotate(' + r.rotate + 'deg)'"
+      >{{ r.text }}</span>
+    </div>
+  </div>
+</section>

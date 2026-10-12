@@ -1,0 +1,28 @@
+<section class="envelope-section" id="open">
+  <p class="envelope-section__prompt" *ngIf="!isOpen()">go on, open it</p>
+
+  <div class="envelope" [class.envelope--open]="isOpen()">
+    <div class="envelope__pocket"></div>
+
+    <div class="envelope__letter">
+      <p class="envelope__letter-line">Dear Priya,</p>
+      <p class="envelope__letter-line">there's a lot I've been meaning to say...</p>
+    </div>
+
+    <div class="envelope__flap">
+      <button
+        class="envelope__seal"
+        (click)="open()"
+        [disabled]="isOpen()"
+        aria-label="Break the seal to open your letter"
+      >
+        <span class="envelope__seal-glyph">P</span>
+      </button>
+    </div>
+  </div>
+
+  <button class="envelope-section__continue" *ngIf="isOpen()" (click)="scrollToLetter()">
+    keep reading
+    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 5 L7 10 L12 5" stroke="var(--rose-deep)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+</section>
